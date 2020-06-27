@@ -5,3 +5,7 @@
 - File storage
   - IMediaFileStore (BlogFileStore)
   - IFileStore (FileSystemStore)
+
+## Links
+
+- [Development utilities](https://orcharddojo.net/orchard-resources/CoreLibrary/Utilities/)
