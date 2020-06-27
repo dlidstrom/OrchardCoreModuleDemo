@@ -2,6 +2,7 @@ using System;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.DependencyInjection;
+using OrchardCore.BackgroundTasks;
 using OrchardCore.ContentManagement;
 using OrchardCore.ContentManagement.Display.ContentDisplay;
 using OrchardCore.Data.Migration;
@@ -10,6 +11,7 @@ using Workshop.Demo.Module.Drivers;
 using Workshop.Demo.Module.Handlers;
 using Workshop.Demo.Module.Indexes;
 using Workshop.Demo.Module.Migrations;
+using Workshop.Demo.Module.Services;
 using YesSql.Indexes;
 
 namespace Workshop.Demo.Module
@@ -21,6 +23,7 @@ namespace Workshop.Demo.Module
             services.AddContentPart<PersonPart>().UseDisplayDriver<PersonPartDisplayDriver>().AddHandler<PersonPartHandler>();
             services.AddScoped<IDataMigration, PersonMigrations>();
             services.AddSingleton<IIndexProvider, PersonPartIndexProvider>();
+            services.AddSingleton<IBackgroundTask, MyFirstBackgroundTask>();
         }
 
         public override void Configure(IApplicationBuilder builder, IEndpointRouteBuilder routes, IServiceProvider serviceProvider)
