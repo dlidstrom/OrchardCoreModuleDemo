@@ -18,7 +18,10 @@ namespace Workshop.Demo.Module.Controllers
         [Route("PersonItems")]
         public async Task<string> Index()
         {
-            var personItems = await session.Query<ContentItem, ContentItemIndex>(index => index.ContentType == "PersonPage").ListAsync();
+            var personItems =
+                await session.Query<ContentItem, ContentItemIndex>(
+                    index => index.ContentType == "PersonPage" && index.Published)
+                .ListAsync();
             return string.Join(", ", personItems);
         }
     }

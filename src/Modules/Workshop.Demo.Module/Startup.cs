@@ -8,7 +8,9 @@ using OrchardCore.Data.Migration;
 using OrchardCore.Modules;
 using Workshop.Demo.Module.Drivers;
 using Workshop.Demo.Module.Handlers;
+using Workshop.Demo.Module.Indexes;
 using Workshop.Demo.Module.Migrations;
+using YesSql.Indexes;
 
 namespace Workshop.Demo.Module
 {
@@ -18,6 +20,7 @@ namespace Workshop.Demo.Module
         {
             services.AddContentPart<PersonPart>().UseDisplayDriver<PersonPartDisplayDriver>().AddHandler<PersonPartHandler>();
             services.AddScoped<IDataMigration, PersonMigrations>();
+            services.AddSingleton<IIndexProvider, PersonPartIndexProvider>();
         }
 
         public override void Configure(IApplicationBuilder builder, IEndpointRouteBuilder routes, IServiceProvider serviceProvider)
