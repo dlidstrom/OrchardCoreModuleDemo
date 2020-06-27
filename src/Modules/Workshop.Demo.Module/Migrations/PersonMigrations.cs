@@ -32,8 +32,7 @@ namespace Workshop.Demo.Module.Migrations
             SchemaBuilder.CreateMapIndexTable(
                 nameof(PersonPartIndex),
                 table => table
-                    .Column<string>(nameof(PersonPartIndex), x => x.WithLength(26))
-                    .Column<int>(nameof(PersonPartIndex.ContentItemId))
+                    .Column<string>(nameof(PersonPartIndex.ContentItemId), x => x.WithLength(26))
                     .Column<int>(nameof(PersonPartIndex.Handedness)));
             SchemaBuilder.AlterTable(nameof(PersonPartIndex), table => table
                 .CreateIndex($"IDX_{nameof(PersonPartIndex)}_{nameof(PersonPartIndex.Handedness)}", nameof(PersonPartIndex.Handedness)));
