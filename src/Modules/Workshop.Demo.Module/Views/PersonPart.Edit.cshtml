@@ -1,0 +1,12 @@
+@model PersonPartViewModel
+
+@Model.BirthDateUtc
+@Model.Name
+<span>Hello, world!</span>
+<div class="form-group">
+    <label asp-for="Title" class="control-label"></label>
+    <input asp-for="Title" class="form-control" />
+    <span asp-validation-for="@Model.BirthDateUtc" class="text-danger"></span>
+    Name:
+    @Html.EditorFor(x => x.Name)
+</div>
