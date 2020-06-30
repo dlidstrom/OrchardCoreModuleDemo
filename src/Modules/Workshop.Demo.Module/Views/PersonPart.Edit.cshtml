@@ -1,12 +1,17 @@
 @model PersonPartViewModel
 
-@Model.BirthDateUtc
-@Model.Name
-<span>Hello, world!</span>
-<div class="form-group">
-    <label asp-for="Title" class="control-label"></label>
-    <input asp-for="Title" class="form-control" />
-    <span asp-validation-for="@Model.BirthDateUtc" class="text-danger"></span>
-    Name:
-    @Html.EditorFor(x => x.Name)
-</div>
+<fieldset class="form-group" asp-validation-class-for="Name">
+    <label asp-for="Name">@T["Name"] <span asp-validation-for="Name"></span></label>
+    <input asp-for="Name" class="form-control" />
+    <span class="hint">@T["Person's name"]</span>
+</fieldset>
+
+<fieldset class="form-group" asp-validation-class-for="BirthDateUtc">
+    <label asp-for="BirthDateUtc">@T["Birth date"] <span asp-validation-for="BirthDateUtc"></span></label>
+    <input asp-for="BirthDateUtc" type="date" class="form-control" />
+</fieldset>
+
+<fieldset class="form-group" asp-validation-class-for="Handedness">
+    <label asp-for="Handedness">@T["Handedness"] <span asp-validation-for="Handedness"></span></label>
+    <select asp-for="Handedness" asp-items="Html.GetEnumSelectList<Workshop.Demo.Module.Models.Handedness>()" class="form-control"></select>
+</fieldset>

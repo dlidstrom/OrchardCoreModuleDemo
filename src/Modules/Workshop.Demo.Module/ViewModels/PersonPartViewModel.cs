@@ -1,5 +1,6 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+using Workshop.Demo.Module.Models;
 
 namespace Workshop.Demo.Module.ViewModels
 {

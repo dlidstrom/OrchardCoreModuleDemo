@@ -2,7 +2,7 @@ using System;
 using OrchardCore.ContentFields.Fields;
 using OrchardCore.ContentManagement;
 
-namespace Workshop.Demo.Module
+namespace Workshop.Demo.Module.Models
 {
     public class PersonPart : ContentPart
     {
@@ -11,11 +11,5 @@ namespace Workshop.Demo.Module
         public DateTime? BirthDateUtc { get; set; }
 
         public TextField Biography { get; set; }
-    }
-
-    public enum Handedness
-    {
-        Left,
-        Right
     }
 }

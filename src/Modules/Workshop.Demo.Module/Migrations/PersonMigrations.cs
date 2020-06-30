@@ -4,6 +4,7 @@ using OrchardCore.ContentManagement.Metadata;
 using OrchardCore.ContentManagement.Metadata.Settings;
 using OrchardCore.Data.Migration;
 using Workshop.Demo.Module.Indexes;
+using Workshop.Demo.Module.Models;
 
 namespace Workshop.Demo.Module.Migrations
 {

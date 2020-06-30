@@ -1,4 +1,5 @@
 @model PersonPartViewModel
 
-Name:
-@Html.DisplayFor(x => x.Name)
+<div><strong>@Model.Name</strong></div>
+<div>@T["Birth Date: {0}", Model.BirthDateUtc?.ToShortDateString()]</div>
+<div>@T["Handedness: {0}", Model.Handedness]</div>

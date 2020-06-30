@@ -3,6 +3,7 @@ using OrchardCore.ContentManagement.Display.ContentDisplay;
 using OrchardCore.ContentManagement.Display.Models;
 using OrchardCore.DisplayManagement.ModelBinding;
 using OrchardCore.DisplayManagement.Views;
+using Workshop.Demo.Module.Models;
 using Workshop.Demo.Module.ViewModels;
 
 namespace Workshop.Demo.Module.Drivers
@@ -29,6 +30,9 @@ namespace Workshop.Demo.Module.Drivers
         {
             var viewModel = new PersonPartViewModel();
             await updater.TryUpdateModelAsync(viewModel, Prefix);
+            part.BirthDateUtc = viewModel.BirthDateUtc;
+            part.Name = viewModel.Name;
+            part.Handedness = viewModel.Handedness;
             return Edit(part, context);
         }
 

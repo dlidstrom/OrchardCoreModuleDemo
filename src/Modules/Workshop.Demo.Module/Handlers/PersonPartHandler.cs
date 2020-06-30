@@ -1,5 +1,6 @@
 using System.Threading.Tasks;
 using OrchardCore.ContentManagement.Handlers;
+using Workshop.Demo.Module.Models;
 
 namespace Workshop.Demo.Module.Handlers
 {

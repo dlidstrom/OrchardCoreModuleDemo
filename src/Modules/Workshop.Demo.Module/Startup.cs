@@ -11,6 +11,7 @@ using Workshop.Demo.Module.Drivers;
 using Workshop.Demo.Module.Handlers;
 using Workshop.Demo.Module.Indexes;
 using Workshop.Demo.Module.Migrations;
+using Workshop.Demo.Module.Models;
 using Workshop.Demo.Module.Services;
 using YesSql.Indexes;
 
